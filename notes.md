@@ -97,8 +97,39 @@ It is programmers job to use this and write a program
 BSL provides variety of arthmetic operations on Numbers such as +, -, *, /, abs, add1, ceiling, denominator, exact->inexact, expt, floor, gcd, log, max, numerator, quotient, random, remainder, sqr and tan and many more
 
 ### The Arithmetic of Strings
+Many believe that computing is all about bits and bytes. However for a programmer and program, it is all about representing real world information as data. Data comes in all types and shapes. One such thing is 'Strings'. Actually it is sequence of characters which is called `1String` in BSL
+
 ### Mixing It Up
+So far, basic operations consumes one data type and produces the same type. But most of the programming is consuming some data type and producing other data types.
+```
+; String -> Number
+(string-length "hello world")
+
+; String -> 1String
+(string-ith "hello" 1)
+
+; Number -> String
+(number->string 42)
+
+(+ (string-length "hello world") 20)
+```
 ### The Arithmetic of Images
+With `2htdp/image` library we can create basic images
+```
+(circle 10 "solid" "green")
+(ellipse 20 40 "outline" "red")
+(line 20 40 "blue") ; 0,0 to 20,40
+(line 40 0 "blue") ; 0,0 to 40,0 straightline
+(rectangle 100 40 "solid" "orange")
+(text "Banner" 36 "indigo")
+(triangle 25 "outline" "grey")
+; And many more shapes
+(image-width (circle 10 "solid" "green)) ; 20
+(image-height (rectangle 100 40 "solid" "orange")) ; 40
+```
+17:28
+
+
 ### The Arithmetic of Booleans
 ### Mixing It Up with Booleans
 ### Predicates: Know Thy Data
