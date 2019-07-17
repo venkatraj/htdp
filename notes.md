@@ -32,7 +32,30 @@ Table of Content for this book
 Difference between first and second editions
 
 # Prologue: How to Program
+Introduction for using DrRacket
+
 ## Arthmetic and Arithmetic
+Programming is to write down arthmetic expressions. With BSL, arithmetic is not limited to numbers, but can also do with strings, booleans and images.
+```
+"hello world" ;"hello world"
+(string-append "hello" "world") ;"helloworld"
+(string-append "hello" " " "world") ;"hello world"
+(+ (string-length "hello world") 20) ;31
+(number->string 42) ;"42"
+(string->number "42") ;42
+(string->number "hello world") ;#false
+(and #true #true)   ;#true
+(and #true #false)  ;#false
+(or #true #false)   ;#true
+(or #false #false)  ;#false
+(not #false)        ;#true
+(> 10 9)     ; #true
+(< -1 0)     ; #true
+(= 42 9)     ; #false
+(>= 10 10)   ; #true
+(<= -1 0)    ; #true
+(string=? "design" "tinker")  ; #false
+```
 ## Inputs and Outputs
 ## Many Ways to Compute
 ## One Program, Many Definitions
