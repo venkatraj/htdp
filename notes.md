@@ -88,8 +88,30 @@ Encourages that I'm a programmer now
 ## Not!
 Tells the difference between knowing the constructs of a language and becoming a programmer
 
-# 1.3 How to Design Programs
-## 1.3.1 Designing Functions
+# Fixed-Size Data
+## Arithmetic
+Every programming language has two parts. Data and Operations on data. BSL comes with atomic data such as Numbers, Strings, Booleans and Images. Also provides primitive or pre defined operations on these atomic data
+It is programmers job to use this and write a program
+
+### The Arithmetic of Numbers
+BSL provides variety of arthmetic operations on Numbers such as +, -, *, /, abs, add1, ceiling, denominator, exact->inexact, expt, floor, gcd, log, max, numerator, quotient, random, remainder, sqr and tan and many more
+
+### The Arithmetic of Strings
+### Mixing It Up
+### The Arithmetic of Images
+### The Arithmetic of Booleans
+### Mixing It Up with Booleans
+### Predicates: Know Thy Data
+
+## Functions and Programs
+### Functions
+### Computing
+### Composing Functions
+### Global Constants
+### Programs
+
+## How to Design Programs
+### Designing Functions
 1. Express how you wish to represent information as data
 `; We use numbers to represent Temparature`
 2. Write down a signature, a statement of purpose and a function header
@@ -140,15 +162,15 @@ Translate the data definitions into an outline of the function.
 49
 ```
 
-## 1.3.2 Finger Excercises: Functions
+### Finger Excercises: Functions
 Exercise 34. Design the function string-first, which extracts the first character from a non-empty string. Don’t worry about empty strings.
 
-## 1.3.3 Domain Knowledge
+### Domain Knowledge
 There are `two forms` of domain knowledge.
 1. You may need external domain knowledge such as maths, biology, civil engineering, etc to solve given problem. Since a programmer can't know it all, you may need to speak to domain expert.
 2. Knowledge of available library functions in the choosen programming language.
 
-## 1.3.4 From Functions to Programs
+### From Functions to Programs
 Often to solve problems, we need more than one function.
 That include global constants, auxillary functions, etc
 
@@ -157,5 +179,39 @@ When you realize you need more than one function to solve problem, you'll create
 2. A signature
 3. A purpose statement
 
-## 1.3.5 On Testing
+### On Testing
 Find a way to make the testing automatic. When we follow `Systematic Program Design`, it automatically becomes `Test Drive Development` as we need to write `function examples` which is just tests of functions
+
+### Designing World Programs
+### Virtual Pet Worlds
+
+## Intervals, Enumerations and Itemizations
+### Programming with Conditionals
+### Computing Conditionally
+### Enumerations
+### Intervals
+### Itemizations
+### Designing with Itemizations
+### Finite State Worlds
+
+## Adding Structure
+### From Positions to posn Structures
+### Computing with posns
+### Programming with posn
+### Defining Structure Types
+### Computing with Structures
+### Programming with Structures
+### The Universe of Data
+### Designing with Structures
+### Structure in the World
+### A Graphical Editor
+### More Virtual Pets
+
+## Itemizations and Structures
+### Designing with Itemizations, Again
+### Mixing Up Worlds
+### Input Errors
+### Checking the World
+### Equality Predicates
+
+## Summary

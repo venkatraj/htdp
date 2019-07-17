@@ -3,4 +3,4 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname |1.1|) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (define x 12)
 (define y 5)
-(sqrt (+ (* x x) (* y y)))
+(sqrt (+ (sqr x) (sqr y)))
