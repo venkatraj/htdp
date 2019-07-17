@@ -16,8 +16,29 @@
 This book uses DrRacket as development environment which has 2 parts. One is for definitions and one is for interactions. It takes advantage of Racket programming language, but uses its own teaching languages such as Beginner Student Languges, or BSL and other *SL languages. The reason for these decision is that a beginner program don't have to distract himself with language specific things and environments. Just using pre algebra knowledge, students can go on to learn how to program and transferrable skills
 
 ## Skills that Transfer
+By practing to design programs we acquire the following skills
+- Analysis
+- Precision
+- Description
+- Focus
+- Attention to details
+- Refining Design
+The skills are necessary for every professional and so by design programs, we learn these skills and apply it wherever it is required.
+
 ## This Book and Its Parts
+Table of Content for this book
+
 ## The Differences
+Difference between first and second editions
+
+# Prologue: How to Program
+## Arthmetic and Arithmetic
+## Inputs and Outputs
+## Many Ways to Compute
+## One Program, Many Definitions
+## One More Definition
+## You Are a Programmer Now
+## Not!
 
 # 1.3 How to Design Programs
 ## 1.3.1 Designing Functions
