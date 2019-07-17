@@ -1,0 +1,92 @@
+# Preface
+## Systematic Program Design
+1. From Problem Analysis to Data Definitions. In this step we identify how a real world information can be represented in choosen programming language as data.
+
+2. Signature, Purpose Statement, Header. In this step, we clarify what our program consumes and produces. This is called signature. Purpose statement states what this program is going to do. Header is just a stub
+
+3. Functional Examples. This illustrates what is given to function and what is expected as output.
+
+4. Function Template. Outline of function
+
+5. Function Definition. The actual code
+
+6. Testing. We can use functional examples as data to test our written function.
+
+## DrRacket and the Teaching Languages
+This book uses DrRacket as development environment which has 2 parts. One is for definitions and one is for interactions. It takes advantage of Racket programming language, but uses its own teaching languages such as Beginner Student Languges, or BSL and other *SL languages. The reason for these decision is that a beginner program don't have to distract himself with language specific things and environments. Just using pre algebra knowledge, students can go on to learn how to program and transferrable skills
+
+## Skills that Transfer
+## This Book and Its Parts
+## The Differences
+
+# 1.3 How to Design Programs
+## 1.3.1 Designing Functions
+1. Express how you wish to represent information as data
+`; We use numbers to represent Temparature`
+2. Write down a signature, a statement of purpose and a function header
+  * `A function signature` is a comment that what your function consumes and produces
+```
+  ; Number -> Number (Signature)
+  ; computes the area of a square with side len (Number) (Statement of purpose)
+  (define (area-of-square len) 0) ;header
+```
+3. Functional Examples
+```
+; given: 2 expect: 4
+; given: 7 expect: 49
+```
+4. Function Template
+Translate the data definitions into an outline of the function.
+```
+(define (area-of-square len)
+  (...len...))
+```
+5. Function Definition (code it!)
+```
+; Number => Number
+; computes the area of a square with side len
+; given: 2 expect: 4
+; given: 7 expect: 49
+(define (area-of-square len)
+  (sqr len))
+
+; Another example
+; Number String Image -> Image
+; adds s to img, y pixels from top, 10 pixels to the left
+; given: 
+;    5 for y, 
+;    "hello" for s, and
+;    (empty-scene 100 100) for img
+; expected: 
+;    (place-image (text "hello" 10 "red") 10 5 ...)
+;    where ... is (empty-scene 100 100)
+(define (add-image y s img)
+  (place-image (text s 10 "red") 10 y img))
+```
+6. Testing
+```
+> (area-of-square 2)
+4
+> (area-of-square 7)
+49
+```
+
+## 1.3.2 Finger Excercises: Functions
+Exercise 34. Design the function string-first, which extracts the first character from a non-empty string. Don’t worry about empty strings.
+
+## 1.3.3 Domain Knowledge
+There are `two forms` of domain knowledge.
+1. You may need external domain knowledge such as maths, biology, civil engineering, etc to solve given problem. Since a programmer can't know it all, you may need to speak to domain expert.
+2. Knowledge of available library functions in the choosen programming language.
+
+## 1.3.4 From Functions to Programs
+Often to solve problems, we need more than one function.
+That include global constants, auxillary functions, etc
+
+When you realize you need more than one function to solve problem, you'll create a `wish list` with needed functions. That wish list consist of three things
+1. Meaningful name of a function
+2. A signature
+3. A purpose statement
+
+## 1.3.5 On Testing
+Find a way to make the testing automatic. When we follow `Systematic Program Design`, it automatically becomes `Test Drive Development` as we need to write `function examples` which is just tests of functions
