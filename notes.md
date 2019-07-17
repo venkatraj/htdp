@@ -183,8 +183,20 @@ We put function definitions at work with *function application*
 Computing happens by replacing body expression variables with argument values and as per laws of arthmetic
 
 ### Composing Functions
+A program rarely consists of a single function definition. Typically, programs consist of a *main* definition and several other functions and turns the result of one function application into the input for another. In analogy to algebra, we call this way of defining functions *composition*, and we call these additional functions *auxiliary functions* or *helper* functions.
+Simple Rule: **Define one function per task**
+
 ### Global Constants
+We can define global constant as
+`(define constantName Value)`
+The name of a constant is a *global variable* while the definition is called a *constant definition*.
+
+Rule: **For every constant mentioned in a problem statement, introduce one constant definition.**
+
 ### Programs
+There are 2 kinds of programs
+1. Batch Program which consume all inputs and produces output. It may contain main and auxillary functions
+2. Interactive Program aka event driven program such as a web application or a video player
 
 ## How to Design Programs
 ### Designing Functions
