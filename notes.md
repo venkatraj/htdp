@@ -57,11 +57,36 @@ Programming is to write down arthmetic expressions. With BSL, arithmetic is not 
 (string=? "design" "tinker")  ; #false
 ```
 ## Inputs and Outputs
+Teaches how to write functions
+`(define (FunctionName InputName) BodyExpression)`
+**Function Definition**
+`(define (y x) (* x x))`
+**Function Application**
+`(y 5) ; 25`
+
 ## Many Ways to Compute
+Teaches `cond` construct
+```
+(cond
+  [ConditionExpression1 ResultExpression1]
+  [ConditionExpression2 ResultExpression2]
+  ...
+  [ConditionExpression1N ResultExpressionN]
+  )
+```
 ## One Program, Many Definitions
+Teaches how to define constants
+**constant definition**
+```
+(define Name Expression)
+(define HEIGHT 60)
+```
+
 ## One More Definition
 ## You Are a Programmer Now
+Encourages that I'm a programmer now
 ## Not!
+Tells the difference between knowing the constructs of a language and becoming a programmer
 
 # 1.3 How to Design Programs
 ## 1.3.1 Designing Functions
