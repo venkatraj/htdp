@@ -127,16 +127,61 @@ With `2htdp/image` library we can create basic images
 (image-width (circle 10 "solid" "green)) ; 20
 (image-height (rectangle 100 40 "solid" "orange")) ; 40
 ```
-17:28
 
+Like every image editing software BSL images also has an implicit *anchor point* Using it, BSL composes two images into one. For example `overlay` places all images on top of each other using center as anchor point.
+Available anchor points are `left, middle, right, top, bottom` using these we can mention 9 points
+```
+; operations that use anchor points
+(overlay (circle 10 "solid" "red")
+        (rectangle 100 50 "solid" "black"))
+
+; shifts rectangle (2nd image) to right and down, negative numbers shifts left and up
+(overlay/xy cirle x y rectangle) 
+
+; aligns two images using 9 pre defined anchor points
+(overlay/align "right"
+                 "bottom"
+                 (square 25 "solid" "red")
+                 (rectangle 100 50 "solid" "blue"))
+```
+There are more operations available and 3 more important one for animations are `empty-scene, place-image and scene+line`
 
 ### The Arithmetic of Booleans
+Two values `#true and #false`
+Three operations `and or not`
+
 ### Mixing It Up with Booleans
+We use booleans mostly with conditional calculations. `if` is an expression that helps with conditional calculations
+```
+(define x 2)
+(if (= x 0) 0 (/ 1 x))
+```
+Apart from `=` comparision primitive, there are host of others available in BSL such as `< <= > >=, string=?, string<=? string>=?`
+
 ### Predicates: Know Thy Data
+When using variable, it often leads to error when wrongly assuming data in the variable as one type other than original. For example, using string in addition
+```
+(define generic "hello")
+(+ 10 generic)
+; +: expects a number as 2nd argument, given "hello"
+```
+To confirm the actual data type, we use predicates such as `number?, string?, boolean? and image?`
+There are other predicates available such as `integer?, rational? complex? exact? and inexact?` among others
 
 ## Functions and Programs
 ### Functions
+Programs are functions. Just like algebric functions, programs consumes inputs and produces outputs. We can reuse functions with different inputs to produce corresponding output
+
+There are *constant definitions* and *function definition*. 
+A function definition has a *function header*, *parameters* and *body* 
+```
+(define (FunctionName Param1, Param2 ... Param3)
+  BodyExpressions)
+```
+We put function definitions at work with *function application*
 ### Computing
+Computing happens by replacing body expression variables with argument values and as per laws of arthmetic
+
 ### Composing Functions
 ### Global Constants
 ### Programs
