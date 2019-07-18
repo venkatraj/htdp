@@ -283,6 +283,35 @@ Then start defining a function from the *wish list*
 Find a way to make the testing automatic. When we follow `Systematic Program Design`, it automatically becomes `Test Drive Development` as we need to write `function examples` which is just tests of functions. This kind of test is called *unit testing* as we test an unit (function)
 
 ### Designing World Programs
+*Wish List* for designing World programs
+```
+; WorldState: data that represents the state of the world (cw)
+ 
+; WorldState -> Image
+; when needed, big-bang obtains the image of the current 
+; state of the world by evaluating (render cw) 
+(define (render ws) ...)
+ 
+; WorldState -> WorldState
+; for each tick of the clock, big-bang obtains the next 
+; state of the world from (clock-tick-handler cw) 
+(define (clock-tick-handler cw) ...)
+ 
+; WorldState String -> WorldState 
+; for each keystroke, big-bang obtains the next state 
+; from (keystroke-handler cw ke); ke represents the key
+(define (keystroke-handler cw ke) ...)
+ 
+; WorldState Number Number String -> WorldState 
+; for each mouse gesture, big-bang obtains the next state
+; from (mouse-event-handler cw x y me) where x and y are
+; the coordinates of the event and me is its description 
+(define (mouse-event-handler cw x y me) ...)
+ 
+; WorldState -> Boolean
+; after each event, big-bang evaluates (end? cw) 
+(define (end? cw) ...)
+```
 ### Virtual Pet Worlds
 
 ## Intervals, Enumerations and Itemizations
