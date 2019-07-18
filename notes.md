@@ -199,6 +199,12 @@ There are 2 kinds of programs
 2. Interactive Program aka event driven program such as a web application or a video player
 
 ## How to Design Programs
+Mostly we read a problem statement and stare at it until we get an idea on how to solve it. Then we start to tinkering the code until it works. This is called "garage programming"
+
+Software engineers first look at the problem and filter the unnecessary details. Then comes to an idea that what are the informations that need to be represent as data, and what will be the output. Then they write code that produces them. Then they check whether their solution actually works. This is called **programming product**
+
+In other words, a good programs should come with a short write up that explains what it does, what it consumes and what it produces. Also some assurance that it actually works (test cases)
+
 ### Designing Functions
 1. Express how you wish to represent information as data
 `; We use numbers to represent Temparature`
