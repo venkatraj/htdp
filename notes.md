@@ -369,6 +369,12 @@ It is possible that an enumeration is a set of other enumerations
 Here enumeration `KeyEvent` uses another enumeration `1String` and String
 
 ### Intervals
+A interval is a set of numbers with bounderies. If the bounderies are inclusive in the set, then it is called `closed`, if not it is `open`
+[3,5] is a closed interval which has 3,4 and 5 in it
+(3,5] is a right closed interval which has 4 and 5 in it
+[3,5) is a left closed interval which has 3 and 4 in it
+(3,5) is a open interval which has 4 in it
+
 ### Itemizations
 ### Designing with Itemizations
 ### Finite State Worlds
