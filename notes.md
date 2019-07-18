@@ -376,6 +376,22 @@ A interval is a set of numbers with bounderies. If the bounderies are inclusive 
 (3,5) is a open interval which has 4 in it
 
 ### Itemizations
+*Itemization* is combination of already defined data classes with each other and with individual piece of data
+```
+; An NorF is one of: 
+; – #false
+; – a Number
+```
+`NorF` is an itemization and is combination of `Number` a large data set with individual piece of data `#false`. Similarly, 
+```
+; An LR (short for launching rocket) is one of:
+; – "resting"
+; – NonnegativeNumber
+; interpretation "resting" represents a grounded rocket
+; a number denotes the height of a rocket in flight
+```
+`LR` is an itemization and is combination of individual piece of data `resting(String)` with interval `NonnegativeNumber`
+
 ### Designing with Itemizations
 ### Finite State Worlds
 
