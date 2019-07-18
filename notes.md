@@ -206,9 +206,13 @@ Software engineers first look at the problem and filter the unnecessary details.
 In other words, a good programs should come with a short write up that explains what it does, what it consumes and what it produces. Also some assurance that it actually works (test cases)
 
 ### Designing Functions
-1. Express how you wish to represent information as data
-`; We use numbers to represent Temparature`
-2. Write down a signature, a statement of purpose and a function header
+1. Express how you wish to represent information as data. This is called *data definitions*
+```
+; We use Number to represent Temparature
+; interpretation represents Celsius degress
+```
+*Temparature* is a class (data collection) consists of all *Number*s
+2. Write down a *signature*, a *purpose statement* and a *function header* (also called *stub*)
   * `A function signature` is a comment that what your function consumes and produces
 ```
   ; Number -> Number (Signature)
@@ -221,7 +225,7 @@ In other words, a good programs should come with a short write up that explains 
 ; given: 7 expect: 49
 ```
 4. Function Template
-Translate the data definitions into an outline of the function.
+The next step is to take *inventory*, to understand what are the givens and what we need to compute. Translate the data definitions into an outline of the function.
 ```
 (define (area-of-square len)
   (...len...))
@@ -273,8 +277,10 @@ When you realize you need more than one function to solve problem, you'll create
 2. A signature
 3. A purpose statement
 
+Then start defining a function from the *wish list*
+
 ### On Testing
-Find a way to make the testing automatic. When we follow `Systematic Program Design`, it automatically becomes `Test Drive Development` as we need to write `function examples` which is just tests of functions
+Find a way to make the testing automatic. When we follow `Systematic Program Design`, it automatically becomes `Test Drive Development` as we need to write `function examples` which is just tests of functions. This kind of test is called *unit testing* as we test an unit (function)
 
 ### Designing World Programs
 ### Virtual Pet Worlds
