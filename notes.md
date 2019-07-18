@@ -315,9 +315,59 @@ Find a way to make the testing automatic. When we follow `Systematic Program Des
 ### Virtual Pet Worlds
 
 ## Intervals, Enumerations and Itemizations
+For many problems, basic data types such as Numbers, Strings, Booleans and Images are not sufficient. Programmer need to built new data type upon this basic types. Enumeration, Intervals and Itemization are such three data types.
+
+A Enumeration is a list of every single piece of information that belongs to it
+A Interval is a range of data
+Itemization is a mix of Enumeration and Interval
+
 ### Programming with Conditionals
+Explains use of `cond` constructor and its clauses. Also explains `else` clause. More like switch statement in many languages with default case. Also explains the difference between if and cond
+
 ### Computing Conditionally
+Practical examples of using `cond`
+
 ### Enumerations
+A enumeration is a subset of other data type. For example `MouseEvt` is not all possible strings, but just subset of 6 strings
+```
+; A MouseEvt is one of these Strings:
+; – "button-down"
+; – "button-up"
+; – "drag"
+; – "move"
+; – "enter"
+; – "leave"
+
+; A TrafficLight is one of the following Strings:
+; – "red"
+; – "green"
+; – "yellow"
+; interpretation the three strings represent the three 
+; possible states that a traffic light may assume 
+```
+A function that uses enumeration naturally distinguish between different cases.
+
+It is possible that an enumeration is a set of other enumerations
+```
+; A 1String is one of: 
+; – "q"
+; – "w"
+; – "e"
+; – "r"
+; ...
+; – "\t"
+; – "\r"
+; – "\b"
+
+; A KeyEvent is one of: 
+; – 1String
+; – "left"
+; – "right"
+; – "up"
+; – ...
+```
+Here enumeration `KeyEvent` uses another enumeration `1String` and String
+
 ### Intervals
 ### Itemizations
 ### Designing with Itemizations
