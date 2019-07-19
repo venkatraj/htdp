@@ -315,11 +315,83 @@ Find a way to make the testing automatic. When we follow `Systematic Program Des
 ### Virtual Pet Worlds
 
 ## Intervals, Enumerations and Itemizations
+For many problems, basic data types such as Numbers, Strings, Booleans and Images are not sufficient. Programmer need to built new data type upon this basic types. Enumeration, Intervals and Itemization are such three data types.
+
+A Enumeration is a list of every single piece of information that belongs to it
+A Interval is a range of data
+Itemization is a mix of Enumeration and Interval
+
 ### Programming with Conditionals
+Explains use of `cond` constructor and its clauses. Also explains `else` clause. More like switch statement in many languages with default case. Also explains the difference between if and cond
+
 ### Computing Conditionally
+Practical examples of using `cond`
+
 ### Enumerations
+A enumeration is a subset of other data type. For example `MouseEvt` is not all possible strings, but just subset of 6 strings
+```
+; A MouseEvt is one of these Strings:
+; – "button-down"
+; – "button-up"
+; – "drag"
+; – "move"
+; – "enter"
+; – "leave"
+
+; A TrafficLight is one of the following Strings:
+; – "red"
+; – "green"
+; – "yellow"
+; interpretation the three strings represent the three 
+; possible states that a traffic light may assume 
+```
+A function that uses enumeration naturally distinguish between different cases.
+
+It is possible that an enumeration is a set of other enumerations
+```
+; A 1String is one of: 
+; – "q"
+; – "w"
+; – "e"
+; – "r"
+; ...
+; – "\t"
+; – "\r"
+; – "\b"
+
+; A KeyEvent is one of: 
+; – 1String
+; – "left"
+; – "right"
+; – "up"
+; – ...
+```
+Here enumeration `KeyEvent` uses another enumeration `1String` and String
+
 ### Intervals
+A interval is a set of numbers with bounderies. If the bounderies are inclusive in the set, then it is called `closed`, if not it is `open`
+[3,5] is a closed interval which has 3,4 and 5 in it
+(3,5] is a right closed interval which has 4 and 5 in it
+[3,5) is a left closed interval which has 3 and 4 in it
+(3,5) is a open interval which has 4 in it
+
 ### Itemizations
+*Itemization* is combination of already defined data classes with each other and with individual piece of data
+```
+; An NorF is one of: 
+; – #false
+; – a Number
+```
+`NorF` is an itemization and is combination of `Number` a large data set with individual piece of data `#false`. Similarly, 
+```
+; An LR (short for launching rocket) is one of:
+; – "resting"
+; – NonnegativeNumber
+; interpretation "resting" represents a grounded rocket
+; a number denotes the height of a rocket in flight
+```
+`LR` is an itemization and is combination of individual piece of data `resting(String)` with interval `NonnegativeNumber`
+
 ### Designing with Itemizations
 ### Finite State Worlds
 
