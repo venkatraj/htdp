@@ -449,10 +449,72 @@ There are two examples
 2. Automatic Door - which has locked, closed, open states
 
 ## Adding Structure
+Traffic Light, Door Simulation and all other world programs so far we have seen keeps track of single data.
+
+However, in real world, we need to keep track of multiple data in one name. For example, a bouncing ball which needs to hold two data (moving direction and position). A contact info which hold name, nick name, home no. work no. mobile, etc
+
+Such data are called compound data. In BSL, it is structure type definition
+
 ### From Positions to posn Structures
+A position in world canvas has two values, x-coordinate and y-coordinate.
+
+A `posn` structure combines two numbers in to single value
+```
+(make-posn 3 4)
+; we can also give a name to a `posn`
+(define one-posn (make-posn 3 4))
+```
+
 ### Computing with posns
+It is just reading a graph and find out caresian point x and y values.
+```
+(define p (make-posn 31 26))
+(posn-x p) ; => 31
+(posn-y p) ; => 26
+```
+
 ### Programming with posn
+```
+; computes the distance of ap to the origin
+(check-expect (distance-to-0 (make-posn 0 5)) 5)
+(check-expect (distance-to-0 (make-posn 7 0)) 7)
+(check-expect (distance-to-0 (make-posn 3 4)) 5)
+(check-expect (distance-to-0 (make-posn 8 6)) 10)
+(check-expect (distance-to-0 (make-posn 5 12)) 13)
+(define (distance-to-0 ap)
+  (sqrt
+   (+ (sqr (posn-x ap))
+      (sqr (posn-y ap)))))
+
+(distance-to-0 (make-posn 3 4))
+(distance-to-0 (make-posn 6 (* 2 4)))
+(+ (distance-to-0 (make-posn 12 5)) 10)
+```
+
 ### Defining Structure Types
+A *structure type definition* is another form of definition, distinct from constant and function definitions.
+`(define-struct posn [x y])`
+`(define-struct StructureName [FiledName1, FieldName2 ... FieldNameN])`
+
+A structure type definition actually defines functions
+1. *constructor* which creates *structure instances*
+2. *selector* which retrieves field values
+3. *structure predicate* which confirms whether a value belongs this structure or not
+```
+(define-struct posn [x y])
+; creates these three functions
+
+; constructor
+(make-posn x y)
+
+; selectors
+(posn-x p)
+(posn-y p)
+
+;predicate
+(posn? p)
+```
+
 ### Computing with Structures
 ### Programming with Structures
 ### The Universe of Data
