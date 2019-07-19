@@ -442,6 +442,11 @@ When writing single `cond clause` we shouldn't worry about other range of input 
 
 
 ### Finite State Worlds
+When there is finite number of states in a program such as traficc light state transition diagram, Computer scientists call such diagrams *finite state machines* (FSM), also known as *finite state automata* (FSA). Despite their simplicity, FSMs/FSAs play an important role in computer science.
+
+There are two examples
+1. Traffic Light - which has three state transitions (red, yellow, green)
+2. Automatic Door - which has locked, closed, open states
 
 ## Adding Structure
 ### From Positions to posn Structures
