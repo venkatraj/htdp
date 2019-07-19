@@ -515,7 +515,38 @@ A structure type definition actually defines functions
 (posn? p)
 ```
 
+Since structures are values, it  can also have nested structure
+Here is an example:
+```
+(define-struct centry [name home office cell])
+ 
+(define-struct phone [area number])
+ 
+(make-centry "Shriram Fisler"
+             (make-phone 207 "363-2421")
+             (make-phone 101 "776-1099")
+             (make-phone 208 "112-9981"))
+```
+
+
 ### Computing with Structures
+The general laws are same as computing with `posn` structure
+```
+(define-struct ball [location velocity])
+(ball-location (make-ball l0 v0))
+== l0
+
+(ball-velocity (make-ball l0 v0))
+== v0
+
+(define-struct vel [deltax deltay])
+
+(vel-deltax (make-vel dx0 dy0))
+== dx0
+
+(vel-deltay (make-vel dx0 dy0))
+== dy0
+```
 ### Programming with Structures
 ### The Universe of Data
 ### Designing with Structures
