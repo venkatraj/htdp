@@ -564,6 +564,10 @@ So it is necessary to write `data examples` along with `data definition` such as
 ```
 
 ### Designing with Structures
+When a problem calls for the representation of pieces of information, we need structure.
+
+When defining structure data, we give a name to it and describe which kind of data goes to what field. While doing so, we use only names of built-in data collections or already defined ones
+
 ### Structure in the World
 ### A Graphical Editor
 ### More Virtual Pets
