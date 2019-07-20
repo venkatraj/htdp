@@ -549,6 +549,20 @@ The general laws are same as computing with `posn` structure
 ```
 ### Programming with Structures
 ### The Universe of Data
+A universe of data is huge. For example Number data type can be anything from 0 to Infinity and its negative couter parts.
+
+Similarly user defined data can be any combination of built in data even the wrong ones. That meas that a `Posn` can be any combination of 2 numbers, but also we can use strings such as `(make-posn "hello" "world")` and BSL wouldn't complain.
+
+So it is necessary to write `data examples` along with `data definition` such as
+```
+(define-struct dog [owner name age happiness])
+; a Dog is a structure:
+;   (make-dog Person String PositiveInteger H)
+; data examples:
+(make-dog (make-person "Nagahariharan" "V" #true) "Scooby" 3 99)
+(make-dog (make-person "Narthana" "N" #false) "Gowri" 1 55)
+```
+
 ### Designing with Structures
 ### Structure in the World
 ### A Graphical Editor
