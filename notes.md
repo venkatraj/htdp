@@ -569,6 +569,17 @@ When a problem calls for the representation of pieces of information, we need st
 When defining structure data, we give a name to it and describe which kind of data goes to what field. While doing so, we use only names of built-in data collections or already defined ones
 
 ### Structure in the World
+We have seen that a structure is used to hold "pieces of information"
+
+When we say "piece" it does not necessarily mean a atomic data. It may well hold another structure.
+
+Consider a space invading game. Where UFOs comes down vertically as well as horizondally. This means that we need x and y to represent a UFO postion.
+
+Where as a tank that suppose to shoot down UFO only moves horizontally, so it hold only one value, the x-axis point. However, it may hold additional information such as ammunition stock, etc which also need a structure
+
+So resulting SpaceGame is a strcuture consisting of additional, nested structures
+
+
 ### A Graphical Editor
 ### More Virtual Pets
 
