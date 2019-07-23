@@ -591,3 +591,43 @@ So resulting SpaceGame is a strcuture consisting of additional, nested structure
 ### Equality Predicates
 
 ## Summary
+
+# Arbitrarily Large Data
+## Lists
+### Creating Lists
+### What Is '(), What Is cons
+### Programming with Lists
+### Computing with Lists
+
+## Designing with Self-Referential Data Definitions
+### Finger Exercises: Lists
+### Non-empty Lists
+### Natural Numbers
+### Russian Dolls
+### Lists and World
+### A Note on Lists and Sets
+
+
+## More on Lists
+### Functions that Produce Lists
+### Strctures in Lists
+### Lists in Lists, Files
+### A Graphical Editor, Revisited
+
+## Design by Composition
+### The 'list' Function
+### Composing Functions
+### Auxiliary Functions that Recur
+### Auxiliary Functions that Generalize
+
+## Projects: Lists
+### Real-World Data: Dictionaries
+### Real-World Date: iTunes
+### Word Games, Composition Illustrated
+### Word Games, the Heart of the Problem
+### Feeding Worms
+### Simple Tetris
+### Full Space War
+### Finite State Machines
+
+## Summary
