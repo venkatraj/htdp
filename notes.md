@@ -593,8 +593,49 @@ So resulting SpaceGame is a strcuture consisting of additional, nested structure
 ## Summary
 
 # Arbitrarily Large Data
+
 ## Lists
+We are all aware of `groceries list, to-do list, etc` and we need a way to handle them in our programs.
+
 ### Creating Lists
+To form a list we need to create an empty list
+`'()`
+
+To add info to empty list, we use `cons`(truct)
+`(cons "Mercury" '())`
+which constructs a list from the `'()` list and the string `"Mercury"`
+
+This `cons` has two fields. `first and rest`
+`first` contains "Mercury" and `rest` contains `'()` empty list
+
+To add another item, we use `(cons "Venus" (cons "Mercury" '()))`
+
+**Note:** BSL `List` is more like Linked List data strcuture than Python's List which is an dynamic array
+
+Lists can contain any type of value
+```
+(cons "Robbie Round"
+  (cons 3
+    (cons #true
+      '())))
+```
+
+*Data Definition* for List
+```
+; A 3LON is a list of three numbers: 
+;   (cons Number (cons Number (cons Number '())))
+; interpretation a point in 3-dimensional space 
+
+; *arbitrary no. of items is a self referential one*
+; A List-of-names is one of: 
+; – '()
+; – (cons String List-of-names)
+; interpretation a list of invitees, by last name
+```
+With above itemization, `'()` uses first rule which is an empty list. and `cons "Findler '()` uses second rule. i.e Adding `String` to `List-of-names` which is an empty list (first rule)
+
+
+
 ### What Is '(), What Is cons
 ### Programming with Lists
 ### Computing with Lists
