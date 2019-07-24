@@ -584,7 +584,36 @@ So resulting SpaceGame is a strcuture consisting of additional, nested structure
 ### More Virtual Pets
 
 ## Itemizations and Structures
+Often we need to use itemize data definitions that involves structures or to use structures to combine itemized data.
+
+Consider, space invading game. We need to keep track of UFO (a structure x, y) a tank (x) and a missle (firing state and position)
+
+
 ### Designing with Itemizations, Again
+```
+; A UFO is a Posn. 
+; interpretation (make-posn x y) is the UFO's location 
+; (using the top-down, left-to-right convention)
+ 
+(define-struct tank [loc vel])
+; A Tank is a structure:
+;   (make-tank Number Number). 
+; interpretation (make-tank x dx) specifies the position:
+; (x, HEIGHT) and the tank's speed: dx pixels/tick 
+ 
+; A Missile is a Posn. 
+; interpretation (make-posn x y) is the missile's place
+
+(define-struct aim [ufo tank])
+(define-struct fired [ufo tank missile])
+
+; A SIGS is one of: 
+; – (make-aim UFO Tank)
+; – (make-fired UFO Tank Missile)
+; interpretation represents the complete state of a 
+; space invader game
+
+```
 ### Mixing Up Worlds
 ### Input Errors
 ### Checking the World
