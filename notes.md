@@ -811,7 +811,38 @@ Note that as it is non empty list, there will be *atleast* single item in the li
 
 
 ### Natural Numbers
+BSL comes with many methods that consumes lists, also with few methods that produces list such as *make-list*
+
+Counting numbers are called *natural numbers* in computer science. Unlike regular numbers, natural numbers come with data definition:
+```
+; An N is one of: 
+; – 0
+; – (add1 N)
+; interpretation represents the counting numbers
+```
+So a natural number is 0 and adding one to it also results in natural number. Adding one to resulting natural number also results in natural numbers. i.e. `0, 1, 2, ... n`
+While the data definition can be `; - (+ N 1)`, but `add1` is kind of constructor and has a *selector* `sub1`
+
+In other words, `add1` is `cons` and `sub1` is `first, rest`
+
+With this knowledge, we can make our own *make-list* functions
+```
+; N String -> List-of-strings 
+; creates a list of n copies of s
+ 
+(check-expect (copier 0 "hello") '())
+(check-expect (copier 2 "hello")
+              (cons "hello" (cons "hello" '())))
+ 
+(define (copier n s)
+  (cond
+    [(zero? n) '()]
+    [(positive? n) (cons s (copier (sub1 n) s))])).
+
+```
 ### Russian Dolls
+Just example of arbitrary size data with structure
+
 ### Lists and World
 ### A Note on Lists and Sets
 
