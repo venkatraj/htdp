@@ -684,6 +684,53 @@ cons?   ; a predicate to recognize instnances of cons
 `cons` is *not* a new way of creating data, but a *new way of formulating data definitions*
 
 ### Programming with Lists
+*Problem:* Finding whether a particular name is in contact list
+
+Step 1: Data Definition
+```
+; A List-of-names is one of: 
+; – '()
+; – (cons String List-of-names)
+; interpretation a list of contacts
+```
+
+Step 2: Signature, purpose statement and header
+```
+; List-of-names -> Boolean
+; determines whether "Flatt" is on a-list-of-names
+(define (contains-flatt? a-list-of-names)
+  #false)
+```
+
+Step 3: Function examples
+```
+(check-expect (contains-flatt? '()) #false)
+(check-expect (contains-flatt? (cons "Find" '()))
+              #false)
+(check-expect (contains-flatt? (cons "Flatt" '()))
+              #true)
+(check-expect
+  (contains-flatt?
+    (cons "A" (cons "Flatt" (cons "C" '()))))
+  #true)
+```
+Step 4: Function Template (that matches data definition)
+```
+(define (contains-flatt? alon)
+  (cond
+    [(empty? alon) ...]
+    [(cons? alon) 
+    ... (first alon) ... (rest alon) ...]))
+```
+Step 5: Coding the function
+```
+(define (contains-flatt? alon)
+  (cond
+    [(empty? alon) #false]
+    [(cons? alon)
+     (or (string=? (first alon) "Flatt")
+         (contains-flatt? (rest alon)))]))
+```
 ### Computing with Lists
 
 ## Designing with Self-Referential Data Definitions
