@@ -620,3 +620,101 @@ Consider, space invading game. We need to keep track of UFO (a structure x, y) a
 ### Equality Predicates
 
 ## Summary
+
+# Arbitrarily Large Data
+
+## Lists
+We are all aware of `groceries list, to-do list, etc` and we need a way to handle them in our programs.
+
+### Creating Lists
+To form a list we need to create an empty list
+`'()`
+
+To add info to empty list, we use `cons`(truct)
+`(cons "Mercury" '())`
+which constructs a list from the `'()` list and the string `"Mercury"`
+
+This `cons` has two fields. `first and rest`
+`first` contains "Mercury" and `rest` contains `'()` empty list
+
+To add another item, we use `(cons "Venus" (cons "Mercury" '()))`
+
+**Note:** BSL `List` is more like Linked List data strcuture than Python's List which is an dynamic array
+
+Lists can contain any type of value
+```
+(cons "Robbie Round"
+  (cons 3
+    (cons #true
+      '())))
+```
+
+*Data Definition* for List
+```
+; A 3LON is a list of three numbers: 
+;   (cons Number (cons Number (cons Number '())))
+; interpretation a point in 3-dimensional space 
+
+; *arbitrary no. of items is a self referential one*
+; A List-of-names is one of: 
+; – '()
+; – (cons String List-of-names)
+; interpretation a list of invitees, by last name
+```
+With above itemization, `'()` uses first rule which is an empty list. and `cons "Findler '()` uses second rule. i.e Adding `String` to `List-of-names` which is an empty list (first rule)
+
+
+### What Is '(), What Is cons
+Just like `#true` and `#false` a `'()` is a constant which represents empty list
+
+The predicator `empty?` will return `#true` only for `'()` and `#false` for all other values
+
+If you think, `cons` is nothing but a structure with 2 fields `first` and `rest` where first can be a atomic data and rest can be a list. While it is possible to use `struct` to make `lists`, the auto created `constcutor, selectors and predicates` will cause confusion and break functions in strange ways.
+
+So we abstract the idea with `cons` which is a checked constructor.
+By `checked constructor` we mean that we can't give invalid values. i.e. we can't pass no list value as 2nd filed. Lists has follow primitives
+```
+'()     ; a empty list
+empty?  ; predicate for empty list
+cons    ; a `checked` constructor to create two-field
+first   ; the selector to extract the last item added
+rest    ; the selector to extract the extended list
+cons?   ; a predicate to recognize instnances of cons
+```
+`cons` is *not* a new way of creating data, but a *new way of formulating data definitions*
+
+### Programming with Lists
+### Computing with Lists
+
+## Designing with Self-Referential Data Definitions
+### Finger Exercises: Lists
+### Non-empty Lists
+### Natural Numbers
+### Russian Dolls
+### Lists and World
+### A Note on Lists and Sets
+
+
+## More on Lists
+### Functions that Produce Lists
+### Strctures in Lists
+### Lists in Lists, Files
+### A Graphical Editor, Revisited
+
+## Design by Composition
+### The 'list' Function
+### Composing Functions
+### Auxiliary Functions that Recur
+### Auxiliary Functions that Generalize
+
+## Projects: Lists
+### Real-World Data: Dictionaries
+### Real-World Date: iTunes
+### Word Games, Composition Illustrated
+### Word Games, the Heart of the Problem
+### Feeding Worms
+### Simple Tetris
+### Full Space War
+### Finite State Machines
+
+## Summary
