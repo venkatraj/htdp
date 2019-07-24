@@ -844,8 +844,10 @@ With this knowledge, we can make our own *make-list* functions
 Just example of arbitrary size data with structure
 
 ### Lists and World
-### A Note on Lists and Sets
+With lists and self referential data definitions, we can design a space invader game where users can fire as many as missiles they want as opposed to earlier single ufo, single tank and single fire
 
+### A Note on Lists and Sets
+This section teaches about the difference between lists and sets. How a set can be represented in list and so on.
 
 ## More on Lists
 ### Functions that Produce Lists
