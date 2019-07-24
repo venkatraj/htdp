@@ -732,8 +732,10 @@ Step 5: Coding the function
          (contains-flatt? (rest alon)))]))
 ```
 ### Computing with Lists
+Explains the step by step replacement process as DrRacket continues to execute the function
 
 ## Designing with Self-Referential Data Definitions
+
 ### Finger Exercises: Lists
 ### Non-empty Lists
 ### Natural Numbers
