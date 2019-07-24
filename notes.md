@@ -791,6 +791,25 @@ From the above table we could come to a conclusion that the expression we needed
 
 ### Finger Exercises: Lists
 ### Non-empty Lists
+We can define a non empty list as follows:
+```
+; An NEList-of-temperatures is one of: 
+; – (cons CTemperature '())
+; – (cons CTemperature NEList-of-temperatures)
+; interpretation non-empty lists of Celsius temperatures 
+
+; NEList-of-temperatures -> Number
+; computes the sum of the given temperatures 
+(check-expect
+  (sum (cons 1 (cons 2 (cons 3 '())))) 6)
+(define (sum ne-l)
+  (cond
+    [(empty? (rest ne-l)) (first ne-l)]
+    [else (+ (first ne-l) (sum (rest ne-l)))]))
+```
+Note that as it is non empty list, there will be *atleast* single item in the list and its *rest* part is, of course, an empty list. So we need to check, whether the rest of list is empty to determine that we reached end of list `[(empty? (rest ne-l)) (first ne-l)]`
+
+
 ### Natural Numbers
 ### Russian Dolls
 ### Lists and World
