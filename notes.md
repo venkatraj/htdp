@@ -735,6 +735,59 @@ Step 5: Coding the function
 Explains the step by step replacement process as DrRacket continues to execute the function
 
 ## Designing with Self-Referential Data Definitions
+**Design Receipe**
+1. If a problem statement is about information of arbitrary size, you need self referential data definition to represent it.
+For a *valid* self referencial data definition, it should satisfy two conditions
+- it must contain *at least* two clauses
+- *at least* one of the clause must *not* refer back to the class of data that is being defined.
+
+We can validate a self-referential data definition by creating data examples. For example:
+```
+; A List-of-names is one of:
+; - '()
+; - (cons String List-of-names)
+; interpretation list of names
+```
+In this data definition, we have atlease 2 clauses and one of them `'()` isn't refering back to itself. To validate we use this
+```
+'()
+(cons "a" '())
+(cons "b" (cons "a" '()))
+```
+First data example validates the clause that does not refer to itself. Other two examples validate the 2nd clause that refer to itself.
+
+2. Signature, purpose statement and header
+3. Functional examples. Be sure to work through inputs that use self-referential clauses several times
+```
+given             wanted
+'()                 0
+(cons "a" '())      1
+(cons "b"
+  (cons "a" '()))   2
+```
+4. Function Templates. Since self referencial data definition has clauses just like `Itemization`, we need to use `cond` and has many clauses to match data definition. And we should also write down appropriate `selector expressions` such as `(first alon)` and `(rest alon`)
+![image](../convert-data-definition-to-function-template.png)
+
+When a data definition is self-referential in the `ith` clause and the `kth` field of the structure mentioned there, the template should be self-referential in the `ith cond` clause and the selector expression for the `kth` field. For each such selector expression, add an arrow back to the function parameter. At the end, your template must have as many arrows as we have in the data definition.
+
+Since BSL and most programming languages are text-oriented, you must use an alternative to the arrow, namely, a self-application (aka recursion, natural recursion) of the function to the appropriate selector expression:
+```
+(define (fun-for-los alos)
+  (cond
+    [(empty? alos) ...]
+    [else
+      (... (first alos) ...
+       ... (fun-for-los (rest alos)) ...)]))
+```
+5. Writing function body, the actual code
+![image](../function-template-to-definition.png)
+Table base method
+![image](../function-template-to-definition-table-method.png)
+![image](../function-template-to-definition-table-method-example.png)
+From the above table we could come to a conclusion that the expression we needed is `(+ (how-many (rest alos)) 1)`
+
+6. Turn function examples to tests
+
 
 ### Finger Exercises: Lists
 ### Non-empty Lists
