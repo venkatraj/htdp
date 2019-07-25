@@ -909,7 +909,11 @@ There are other ways such that making a list of lines from text file, making a l
 ### A Graphical Editor, Revisited
 
 ## Design by Composition
+You have encountered this need to design interrelated functions several times. Sometimes a problem statement implies several different tasks, and each task is best realized with a function. At other times, a data definition may refer to another one, and in that case, a function processing the former kind of data relies on a function processing the latter.
+
 ### The 'list' Function
+`list` function consume arbitrary amount of parameters produces a list.
+
 ### Composing Functions
 ### Auxiliary Functions that Recur
 ### Auxiliary Functions that Generalize
