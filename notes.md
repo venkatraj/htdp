@@ -915,6 +915,10 @@ You have encountered this need to design interrelated functions several times. S
 `list` function consume arbitrary amount of parameters produces a list.
 
 ### Composing Functions
+**Rules for Functions**
+1. Design one function per task. Formulate auxiliary function definitions for every dependency between quantities in the problem.
+2. Design one template per data definition. Formulate auxiliary function definitions when one data definition points to a second data definition.
+
 ### Auxiliary Functions that Recur
 ### Auxiliary Functions that Generalize
 
