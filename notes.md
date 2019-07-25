@@ -900,6 +900,10 @@ This chapter illustrates some ideas from this world, including functions that cr
 ```
 
 ### Lists in Lists, Files
+We already saw that we can read text files using `read-file` function. However, it reads a file into a string which consist of `\n` and `\t`.
+
+There are other ways such that making a list of lines from text file, making a list of words and making a list of list that contains a list item for each line and a list of words for that line.
+
 
 
 ### A Graphical Editor, Revisited
