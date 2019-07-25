@@ -27,4 +27,13 @@
 (define (collapse lls)
   (cond
     [(empty? lls) ""]
-    [(cons? lls) (implode (first lls) ... (words-on-line (rest lls)) ...]))
+    [(cons? lls) (string-append (ls->string (first lls)) (collapse (rest lls)))]))
+
+; List-of-string -> String
+; converts a list of string into string
+(check-expect (ls->string line0) "hello world \n")
+(check-expect (ls->string line1) "\n")
+(define (ls->string ls)
+  (cond
+    [(empty? ls) "\n"]
+    [(cons? ls) (string-append (first ls) " " (ls->string (rest ls)))]))
