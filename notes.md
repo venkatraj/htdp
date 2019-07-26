@@ -921,6 +921,17 @@ You have encountered this need to design interrelated functions several times. S
 
 ### Auxiliary Functions that Recur
 ### Auxiliary Functions that Generalize
+Some times, auxiliary functions are not just helper functions but a solution to more general problem.
+
+For example, If we try to design a function that renders polygons (having 3 or more Posn), the natural solution will be wrong. 
+```
+; A Polygon is one of:
+; – (list Posn Posn Posn)
+; – (cons Posn Polygon)
+```
+Because, since the first clause is a triangle, a polygon, we will design an auxilliary that does that. But when you try to use it for square, pentagon and other polygons it won't work, becuase already first and third Posn are connected rather than open.
+
+So, here we don't need an auxiliary function that draw basic polygon (triangle) but a more generalized function that connects to dots from given Posn.
 
 ## Projects: Lists
 ### Real-World Data: Dictionaries
